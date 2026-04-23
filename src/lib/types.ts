@@ -10,6 +10,24 @@ export interface Stock {
   volatility: number;
   high: number;
   low: number;
+  weekHighPrice: number;
+  weekLowPrice: number;
+}
+
+export interface SectorStats {
+  sector: string;
+  avgPrice: number;
+  avgChange: number;
+  avgVolatility: number;
+  avgMomentum: number;
+  stockCount: number;
+}
+
+export interface StockCorrelation {
+  ticker: string;
+  name: string;
+  sector: string;
+  priceChange: number;
 }
 
 export interface PricePoint {

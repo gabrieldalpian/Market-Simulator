@@ -37,6 +37,10 @@ export function updateStockPrice(stock: Stock): Stock {
     change,
     changePercent,
     momentum: clampedMomentum,
+    high: Math.max(stock.high, roundedPrice),
+    low: Math.min(stock.low, roundedPrice),
+    weekHighPrice: Math.max(stock.weekHighPrice, roundedPrice),
+    weekLowPrice: Math.min(stock.weekLowPrice, roundedPrice),
   };
 }
 
@@ -70,5 +74,9 @@ export function applyEventImpact(
     change,
     changePercent,
     momentum: newMomentum,
+    high: Math.max(stock.high, roundedPrice),
+    low: Math.min(stock.low, roundedPrice),
+    weekHighPrice: Math.max(stock.weekHighPrice, roundedPrice),
+    weekLowPrice: Math.min(stock.weekLowPrice, roundedPrice),
   };
 }
